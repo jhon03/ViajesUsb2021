@@ -12,6 +12,8 @@ public interface TipoIdentificacionMapper {
 
 	public TipoIdentificacionDTO tipoIdentificacionToTipoIdentificacionDTO(TipoIdentificacion tipoIdentificacion);
 	
+
+	
 	
 	public List<TipoIdentificacionDTO> lstTipoIdentificacionToListTipoIdentificacionDTO(List<TipoIdentificacion> lstTipoIdentificacion);
 	

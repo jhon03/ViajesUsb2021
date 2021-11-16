@@ -56,6 +56,7 @@ class DestinoTest {
 	void debeActualizarElDestinoSanAndres() {
 
 		try {
+			
 			DestinoDTO destinoDTO = new DestinoDTO();
 			destinoDTO.setIdDest(9L);
 			destinoDTO.setAire(Constantes.SI);
@@ -63,7 +64,7 @@ class DestinoTest {
 			destinoDTO.setMar(Constantes.SI);
 
 			destinoDTO.setCodigo("Cart");
-			destinoDTO.setNombre("Post post test TEST");
+			destinoDTO.setNombre("CARTAGENA");
 			destinoDTO.setDescripcion("prueba naturaleza y aire");
 			destinoDTO.setEstado(Constantes.ACTIVO);
 			destinoDTO.setFechaCreacion(new Date());

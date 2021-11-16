@@ -73,7 +73,9 @@ class ClienteTest {
 	void debeConsultarClientePorCorreoIgnorandoMm() {
 
 		try {
-			cliente = clienteService.findByCorreoIgnoreCase("_-.-.___—–_._gon.rz365@gmail.com.mx");
+			cliente = clienteService.findByCorreoIgnoreCase("_-.-.___—–_._gon.rz365@gmail.com.mx\r\n"
+					+ "\r\n"
+					+ "");
 			System.out.println(cliente.getNombre());
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -94,7 +96,7 @@ class ClienteTest {
 
 		try {
 
-			cliente = clienteService.findByNumeroIdentificacionLike("");
+			cliente = clienteService.findByNumeroIdentificacionLike("1112469726");
 			System.out.println(cliente.getNombre());
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -115,7 +117,7 @@ class ClienteTest {
 	void consultarClientePorNombre() {
 
 		try {
-			cliente = clienteService.findByNombreIgnoreCaseLike("");
+			cliente = clienteService.findByNombreIgnoreCaseLike("JHON ANDERSON");
 			System.out.println(cliente.getNombre());
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -163,7 +165,7 @@ class ClienteTest {
 	void consultarTotalCLientesPorEstado() {
 		try {
 
-			Long lstCliente = clienteService.countAndfindByEstado("");
+			Long lstCliente = clienteService.countAndfindByEstado("A");
 
 			System.out.println(lstCliente);
 
@@ -233,7 +235,7 @@ class ClienteTest {
 
 			ClienteDTO clienteeDTO = new ClienteDTO();
 
-			clienteeDTO.setNumeroIdentificacion("222222222");
+			clienteeDTO.setNumeroIdentificacion("345678");
 			clienteeDTO.setPrimerApellido("arcos");
 			clienteeDTO.setSegundoApellido("velez");
 			clienteeDTO.setNombre("Valeria");
@@ -306,7 +308,7 @@ class ClienteTest {
 			clienteDTO.setNumeroIdentificacion("11436758766");
 			clienteDTO.setPrimerApellido("Hoyoss");
 			clienteDTO.setSegundoApellido("Idrobo");
-			clienteDTO.setNombre("David Danilooo");
+			clienteDTO.setNombre("David Danilo Test");
 			clienteDTO.setSexo("M");
 			clienteDTO.setFechaNacimiento(fechaNac.getTime());
 			clienteDTO.setFechaCreacion(new Date());

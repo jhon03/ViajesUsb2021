@@ -21,6 +21,7 @@ import co.edu.usbcali.viajesusb.dto.ClienteDTO;
 
 import co.edu.usbcali.viajesusb.repository.ClienteRepository;
 import co.edu.usbcali.viajesusb.utils.Constantes;
+import co.edu.usbcali.viajesusb.utils.Utilities;
 
 @Scope("singleton")
 @Service
@@ -64,10 +65,7 @@ public class ClienteServiceImpl implements ClienteService {
 	public Cliente findByCorreoIgnoreCase(String correo) throws Exception {
 		// TODO Auto-generated method stub
 
-		Pattern pattern = Pattern.compile("([a-z0-9]+(\\\\.?[a-z0-9])*)+@(([a-z]+)\\\\.([a-z]+))+");
-
-		Matcher mather = pattern.matcher(correo);
-
+		
 		if (correo == null || correo.trim().equals("")) {
 			throw new Exception("Debe ingresar un correo electrónico válido");
 		}
@@ -77,7 +75,7 @@ public class ClienteServiceImpl implements ClienteService {
 			throw new Exception("Debe ingresar entre 0 y 100 carácteres");
 		}
 
-		if (mather.find() == false) {
+		if (Utilities.formatoCorreoValido(correo) == false) {
 			throw new Exception("El formato de correo no es válido");
 		}
 
@@ -211,13 +209,13 @@ public class ClienteServiceImpl implements ClienteService {
 		Cliente cliente = null;
 		TipoIdentificacion tiid = null;
 
-		
+		/*
 		  Pattern pattern =
 		  Pattern.compile("([a-z0-9]+(\\\\.?[a-z0-9])*)+@(([a-z]+)\\\\.([a-z]+))+");
 		 
 		 Matcher mather = pattern.matcher(clienteDTO.getCorreo());
 		 
-
+*/
 		// Se arma el destino
 
 		cliente = new Cliente();
@@ -330,6 +328,11 @@ public class ClienteServiceImpl implements ClienteService {
 
 			throw new Exception("No puede ingresar  más de 10 carácteres");
 		}
+		
+		/*
+		if (mather.find() == false) {
+			throw new Exception("El formato de correo no es válido");*/
+		
 
 		cliente.setTipoIdentificacion(tiid);
 
